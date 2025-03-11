@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:griot/ConteScreen.dart';
 import 'package:griot/DetailScreen.dart';
 import 'package:griot/FeedScreen.dart';
 import 'package:griot/MapScreen.dart';
@@ -169,7 +168,6 @@ class _MyAppState extends State<MyApp> {
       routes: {
         '/home': (context) => FeedScreen(lieux: lieux),
         '/detail': (context) => DetailScreen(contes: contes),
-        '/contes': (context) => Contescreen(),
       },
       home: Scaffold(
         body: _screens[_selectedIndex], // Affiche l'écran sélectionné

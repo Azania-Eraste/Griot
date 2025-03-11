@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:griot/ConteScreen.dart';
 
 import 'Models/Conte.dart';
 
@@ -12,7 +13,12 @@ class Contescard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Navigator.pushNamed(context, "/contes");
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Contescreen(conte: comte),  // Passe ici l'objet Conte
+          ),
+        );
       },
       child: Card(
         margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
@@ -20,6 +26,7 @@ class Contescard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Image.asset(comte.imageUrl, fit: BoxFit.cover),
              ListTile(
 
               title: Text( comte.titre, style: TextStyle(fontWeight: FontWeight.bold)),
@@ -32,7 +39,6 @@ class Contescard extends StatelessWidget {
               padding: EdgeInsets.all(8.0),
               child: Text(comte.resume),
             ),
-            Image.asset(comte.imageUrl, fit: BoxFit.cover),
             const SizedBox(height: 8),
           ],
         ),

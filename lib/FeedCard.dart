@@ -16,7 +16,7 @@ class FeedCard extends StatelessWidget {
 
       },
       child: Container(
-        height: MediaQuery.of(context).size.height - 50,
+        height: MediaQuery.of(context).size.height - 110,
         width: MediaQuery.of(context).size.width,
         child: Card(
           margin: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
