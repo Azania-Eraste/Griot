@@ -4,6 +4,7 @@ import 'package:griot/FeedScreen.dart';
 import 'package:griot/MapScreen.dart';
 import 'Models/Conte.dart';
 import 'Models/Lieu.dart';
+import 'Style/colorAsset.dart';
 
 void main() {
   runApp(MyApp());
@@ -108,41 +109,41 @@ class _MyAppState extends State<MyApp> {
       Lieu(
         nom: "Aza",
         description: "Premier Lieu sur mon feed Flutter !",
-        imageUrl: "images/Visily.jpg",
+        imageUrl: "assets/images/Visily.jpg",
       ),
       Lieu(
         nom: "Aza",
         description: "Premier Lieu sur mon feed Flutter !",
-        imageUrl: "Visily.jpg",
+        imageUrl: "assets/images/Visily.jpg",
       ),
       Lieu(
         nom: "Aza",
         description: "Premier Lieu sur mon feed Flutter !",
-        imageUrl: "Visily.jpg",
+        imageUrl: "assets/images/Visily.jpg",
       ),
       Lieu(
         nom: "Aza",
         description: "Premier Lieu sur mon feed Flutter !",
-        imageUrl: "Visily.jpg",
+        imageUrl: "assets/images/Visily.jpg",
       ),
       Lieu(
         nom: "Aza",
         description: "Premier Lieu sur mon feed Flutter !",
-        imageUrl: "Visily.jpg",
+        imageUrl: "assets/images/Visily.jpg",
       ),    Lieu(
         nom: "Aza",
         description: "Premier Lieu sur mon feed Flutter !",
-        imageUrl: "Visily.jpg",
+        imageUrl: "assets/images/Visily.jpg",
       ),
       Lieu(
         nom: "Aza",
         description: "Premier Lieu sur mon feed Flutter !",
-        imageUrl: "Visily.jpg",
+        imageUrl: "assets/images/Visily.jpg",
       ),
       Lieu(
         nom: "Dev Flutter",
         description: "Flutter est génial pour créer des interfaces modernes !",
-        imageUrl: "images/Visily.jpg",
+        imageUrl: "assets/images/Visily.jpg",
       ),
     ]);
 
@@ -174,15 +175,16 @@ class _MyAppState extends State<MyApp> {
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _selectedIndex, // Indique l'élément sélectionné
           onTap: _onItemTapped, // Mise à jour de l'index lors de la sélection
-          items: const <BottomNavigationBarItem>[
+          items:  <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Explorer',
-
+              activeIcon: Icon(Icons.home, color: ColorAsset.primary,)
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.map),
-              label: 'Map'
+              label: 'Map',
+              activeIcon: Icon(Icons.map, color: ColorAsset.primary,)
             ),
           ],
         ),

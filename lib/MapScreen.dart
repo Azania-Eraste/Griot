@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
+import 'package:griot/Style/ColorAsset.dart';
 
 class Mapscreen extends StatefulWidget {
   const Mapscreen({super.key});
@@ -155,8 +156,8 @@ class _MapscreenState extends State<Mapscreen> {
             left: 20,
             child: FloatingActionButton(
               onPressed: _getCurrentLocation,
-              backgroundColor: Colors.green,
-              child: Icon(Icons.my_location, color: Colors.white),
+              backgroundColor: ColorAsset.primary,
+              child: Icon(Icons.my_location, color: ColorAsset.secondary),
             ),
           ),
 
@@ -165,20 +166,4 @@ class _MapscreenState extends State<Mapscreen> {
     );
   }
 
-  Widget _buildRideOption(IconData icon, String label) {
-    bool isSelected = _selectedRide == label;
-    return GestureDetector(
-      onTap: () => setState(() => _selectedRide = label),
-      child: Column(
-        children: [
-          CircleAvatar(
-            backgroundColor: isSelected ? Colors.blue : Colors.grey[300],
-            child: Icon(icon, color: isSelected ? Colors.white : Colors.black),
-          ),
-          SizedBox(height: 5),
-          Text(label, style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
-        ],
-      ),
-    );
-  }
 }
