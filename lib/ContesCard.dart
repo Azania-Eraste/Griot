@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:griot/ConteScreen.dart';
+import 'package:griot/Screen/ConteScreen.dart';
 
 import 'Models/Conte.dart';
 
@@ -7,7 +7,7 @@ class Contescard extends StatelessWidget {
 
   final Conte comte;
 
-  Contescard({super.key, required this.comte});
+  const Contescard({super.key, required this.comte});
 
   @override
   Widget build(BuildContext context) {

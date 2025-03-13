@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:griot/ContesCard.dart';
-
-import 'Models/Conte.dart';
+import '../Models/Conte.dart';
 
 class DetailScreen extends StatefulWidget {
 

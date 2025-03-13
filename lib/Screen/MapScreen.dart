@@ -1,4 +1,3 @@
-import 'dart:async'; // Import nécessaire pour Completer
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
@@ -13,7 +12,6 @@ class Mapscreen extends StatefulWidget {
 }
 
 class _MapscreenState extends State<Mapscreen> {
-  String _selectedRide = "Standard";
   String _searchQuery = "";
   LatLng _mapCenter = LatLng(48.8566, 2.3522); // Initial map center
   LatLng? _currentLocation;

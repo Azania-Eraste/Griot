@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:griot/FeedCard.dart';
-import 'Models/Lieu.dart';
+import '../Models/Lieu.dart';
 
 class FeedScreen extends StatefulWidget {
   final List<Lieu> lieux;

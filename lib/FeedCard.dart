@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:griot/Style/ColorAsset.dart';
 import 'package:griot/Style/textStyling.dart';
 import 'Models/Lieu.dart';
 
@@ -52,7 +53,16 @@ class FeedCard extends StatelessWidget {
                   onPressed: (){
                     Navigator.pushNamed(context, "/detail");
                   },
-                  child: Text("En savoir plus ?"))
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(color: ColorAsset.primary, width: 2),
+                      borderRadius: BorderRadius.circular(12), // Arrondi des bords
+                      
+                    ),
+                    
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12), // Espacement
+                  ),
+                  child: Text("En savoir plus ?",style: TextStylling.feedcardbuttonstyle,))
             )
           ],
         ),

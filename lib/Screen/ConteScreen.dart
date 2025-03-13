@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Models/Conte.dart';
+import '../Models/Conte.dart';
 
 class Contescreen extends StatefulWidget {
   final Conte? conte;
