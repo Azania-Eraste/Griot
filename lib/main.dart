@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:griot/Screen/BaseScreen.dart';
 import 'package:griot/Screen/splash_screen.dart';
-
-import 'Models/Conte.dart';
-import 'Models/Lieu.dart';
-import 'Screen/DetailScreen.dart';
 import 'Screen/FeedScreen.dart';
 
 void main() {

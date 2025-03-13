@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:griot/Controler/LieuController.dart';
-import 'package:griot/Screen/DetailScreen.dart';
 import 'package:griot/Screen/FeedScreen.dart';
 import 'package:griot/Screen/MapScreen.dart';
-import '../Models/Conte.dart';
-import '/Models/Lieu.dart';
 import '/Style/colorAsset.dart';
 
 class Basescreen extends StatefulWidget {
