@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
           // Image de fond
           Positioned.fill(
             child: Image.asset(
-              'images/griot.png', // Assure-toi que le chemin est correct
+              'assets/images/griot.png', // Assure-toi que le chemin est correct
               fit: BoxFit.cover,
             ),
           ),
@@ -47,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
           // Icône centrée
           Center(
             child: Image.asset(
-              'images/logov.png', // Assure-toi que le chemin est correct
+              'assets/images/logov.png', // Assure-toi que le chemin est correct
               width: 80, // Ajuste la taille selon ton besoin
               height: 80,
               color: Colors

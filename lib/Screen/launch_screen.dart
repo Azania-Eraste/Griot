@@ -12,7 +12,7 @@ class LaunchScreen extends StatelessWidget {
           // Background grid of city skylines
           Positioned.fill(
             child: Image.asset(
-              'images/griot.png', // Make sure this asset exists
+              'assets/images/griot.png', // Make sure this asset exists
               fit: BoxFit.cover,
             ),
           ),
@@ -40,7 +40,7 @@ class LaunchScreen extends StatelessWidget {
                   shape: BoxShape.circle,
                 ),
                 child: Image.asset(
-                  'images/logov.png', // Assure-toi que le chemin est correct
+                  'assets/images/logov.png', // Assure-toi que le chemin est correct
                   width: 50,
                   height: 50,
                 ),
