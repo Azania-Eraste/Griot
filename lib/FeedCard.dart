@@ -53,7 +53,7 @@ class FeedCard extends StatelessWidget {
                 right: 20,
               child: ElevatedButton(
                   onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => DetailScreen(contes: ConteController.contes, nom_lieu: lieu.nom,)));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => DetailScreen(contes: lieu.contes, nom_lieu: lieu.nom,)));
                     print('teste');
                   },
                   style: ElevatedButton.styleFrom(
