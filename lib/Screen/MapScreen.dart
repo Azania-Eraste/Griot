@@ -122,7 +122,7 @@ class _MapscreenState extends State<Mapscreen> {
             myLocationButtonEnabled: true,
           ),
           Positioned(
-            top: 40,
+            top: 50,
             left: 10,
             right: 10,
             child: Row(
@@ -131,7 +131,7 @@ class _MapscreenState extends State<Mapscreen> {
                   child: TextField(
                     onChanged: (value) => setState(() => _searchQuery = value),
                     decoration: InputDecoration(
-                      hintText: "Où allez-vous ?",
+                      hintText: "D'où voulez vous apprendre aujourd'hui ?",
                       filled: true,
                       fillColor: Colors.white,
                       contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
@@ -142,7 +142,8 @@ class _MapscreenState extends State<Mapscreen> {
                         onPressed: _searchLocation,
                       ),
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)),
+                          borderRadius: BorderRadius.circular(15)),
+                      focusColor: ColorAsset.primary
                     ),
                   ),
                 ),

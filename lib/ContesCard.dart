@@ -7,6 +7,7 @@ class Contescard extends StatelessWidget {
 
   final Conte comte;
 
+
   const Contescard({super.key, required this.comte});
 
   @override
@@ -21,12 +22,20 @@ class Contescard extends StatelessWidget {
         );
       },
       child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12), // Coins arrondis
+        ),
+        clipBehavior: Clip.hardEdge,
         margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         elevation: 4,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(comte.imageUrl, fit: BoxFit.cover),
+            SizedBox(
+              height: 150, // Hauteur réduite pour l'image
+              width: double.infinity, // S'étend sur toute la largeur
+              child: Image.asset(comte.imageUrl, fit: BoxFit.fitWidth),
+            ),
              ListTile(
 
               title: Text( comte.titre, style: TextStyle(fontWeight: FontWeight.bold)),

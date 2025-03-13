@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:griot/Controler/LieuController.dart';
 import 'package:griot/Screen/FeedScreen.dart';
 import 'package:griot/Screen/MapScreen.dart';
+import 'package:griot/Screen/SearchScreen.dart';
 import '/Style/colorAsset.dart';
 
 class Basescreen extends StatefulWidget {
@@ -24,6 +25,7 @@ class _BasescreenState extends State<Basescreen> {
     _screens.addAll(
         [
           FeedScreen(lieux: LieuController.lieux),  // L'écran pour le feed
+          SearchScreen(),
           Mapscreen(),            // L'écran pour la carte
         ]
     );
@@ -50,6 +52,11 @@ class _BasescreenState extends State<Basescreen> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.home),
                 label: 'Explorer',
+                activeIcon: Icon(Icons.home, color: ColorAsset.primary,)
+            ),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.search_rounded),
+                label: 'Recherche',
                 activeIcon: Icon(Icons.home, color: ColorAsset.primary,)
             ),
             BottomNavigationBarItem(
