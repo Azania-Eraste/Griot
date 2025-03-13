@@ -7,3 +7,5 @@ class Conte {
 
   Conte({required this.titre, required this.sousTitre, required this.resume, required this.histoire, required this.imageUrl});
 }
+
+

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:griot/Controler/ConteController.dart';
+import 'package:griot/Screen/DetailScreen.dart';
 import 'package:griot/Style/ColorAsset.dart';
 import 'package:griot/Style/textStyling.dart';
 import 'Models/Lieu.dart';
@@ -51,7 +53,8 @@ class FeedCard extends StatelessWidget {
                 right: 20,
               child: ElevatedButton(
                   onPressed: (){
-                    Navigator.pushNamed(context, "/detail");
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => DetailScreen(contes: ConteController.contes)));
+                    print('teste');
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(

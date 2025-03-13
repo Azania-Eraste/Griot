@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:griot/Controler/LieuController.dart';
 import 'package:griot/Screen/DetailScreen.dart';
 import 'package:griot/Screen/FeedScreen.dart';
 import 'package:griot/Screen/MapScreen.dart';
@@ -15,7 +16,6 @@ class Basescreen extends StatefulWidget {
 
 class _BasescreenState extends State<Basescreen> {
   int _selectedIndex = 0; // Gère l'index sélectionné
-  final List<Lieu> lieux = [];
 
   // Écrans à afficher en fonction de la sélection
   final List<Widget> _screens = [];
@@ -24,53 +24,9 @@ class _BasescreenState extends State<Basescreen> {
   void initState() {
     super.initState();
 
-
-    // Exemple de données pour les lieux
-    lieux.addAll([
-      Lieu(
-        nom: "Aza",
-        description: "Premier Lieu sur mon feed Flutter !",
-        imageUrl: "assets/images/Visily.jpg",
-      ),
-      Lieu(
-        nom: "Aza",
-        description: "Premier Lieu sur mon feed Flutter !",
-        imageUrl: "assets/images/Visily.jpg",
-      ),
-      Lieu(
-        nom: "Aza",
-        description: "Premier Lieu sur mon feed Flutter !",
-        imageUrl: "assets/images/Visily.jpg",
-      ),
-      Lieu(
-        nom: "Aza",
-        description: "Premier Lieu sur mon feed Flutter !",
-        imageUrl: "assets/images/Visily.jpg",
-      ),
-      Lieu(
-        nom: "Aza",
-        description: "Premier Lieu sur mon feed Flutter !",
-        imageUrl: "assets/images/Visily.jpg",
-      ),    Lieu(
-        nom: "Aza",
-        description: "Premier Lieu sur mon feed Flutter !",
-        imageUrl: "assets/images/Visily.jpg",
-      ),
-      Lieu(
-        nom: "Aza",
-        description: "Premier Lieu sur mon feed Flutter !",
-        imageUrl: "assets/images/Visily.jpg",
-      ),
-      Lieu(
-        nom: "Dev Flutter",
-        description: "Flutter est génial pour créer des interfaces modernes !",
-        imageUrl: "assets/images/Visily.jpg",
-      ),
-    ]);
-
     _screens.addAll(
         [
-          FeedScreen(lieux: lieux),  // L'écran pour le feed
+          FeedScreen(lieux: LieuController.lieux),  // L'écran pour le feed
           Mapscreen(),            // L'écran pour la carte
         ]
     );
@@ -104,7 +60,9 @@ class _BasescreenState extends State<Basescreen> {
                 label: 'Map',
                 activeIcon: Icon(Icons.map, color: ColorAsset.primary,)
             ),
+
           ],
+          selectedItemColor: ColorAsset.primary,
         ),
       ),
     );
