@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'profilsettings.dart';
+import 'privacy_page.dart';
+import 'help_support_page.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -72,9 +74,23 @@ class _ProfilePageState extends State<ProfilePage> {
                 _buildSectionTitle('OTHER SETTINGS'),
                 _buildListTile(Icons.security, 'Security'),
                 _buildListTile(Icons.privacy_tip, 'Privacy',
-                    trailingIcon: Icons.warning_amber_rounded),
+                    trailingIcon: Icons.warning_amber_rounded, onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PrivacyPage(),
+                    ),
+                  );
+                }),
                 _buildListTile(Icons.notifications, 'Notification'),
-                _buildListTile(Icons.help_outline, 'Help & Support'),
+                _buildListTile(Icons.help_outline, 'Help & Support', onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HelpSupportPage(),
+                    ),
+                  );
+                }),
               ],
             ),
           ),
