@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:griot/FeedCard.dart';
+import '../CustomWidget/FeedCard.dart';
 import '../Models/Lieu.dart';
 
 class FeedScreen extends StatefulWidget {
@@ -16,8 +16,7 @@ class _FeedScreenState extends State<FeedScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: PageView.builder(
+    return PageView.builder(
         scrollDirection: Axis.vertical,
         controller: _pageController,
         itemCount: widget.lieux.length,
@@ -38,7 +37,7 @@ class _FeedScreenState extends State<FeedScreen> {
             },
           );
         },
-      ),
-    );
+      );
+
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:griot/ContesCard.dart';
+import 'package:griot/CustomWidget/ContesCard.dart';
 import 'package:griot/Controler/ConteController.dart';
 import 'package:griot/Models/Conte.dart';
 
@@ -29,37 +29,42 @@ class _SearchScreenState extends State<SearchScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: TextField(
-          controller: _searchController,
-          decoration: InputDecoration(
-            hintText: "Que cherchez-vous ?",
-            hintStyle: TextStyle(color: Colors.grey),
-            filled: true,
-            fillColor: Colors.white,
-            suffixIcon: _searchController.text.isNotEmpty
-                ? IconButton(
-              icon: Icon(Icons.clear, color: Colors.grey),
-              onPressed: () {
-                _searchController.clear();
-                _filterContes(""); // Réinitialise la liste
+    return SafeArea(
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: TextField(
+                controller: _searchController,
+                decoration: InputDecoration(
+                  hintText: "Que cherchez-vous ?",
+                  hintStyle: TextStyle(color: Colors.grey),
+                  filled: true,
+                  fillColor: Colors.white,
+                  suffixIcon: _searchController.text.isNotEmpty
+                      ? IconButton(
+                    icon: Icon(Icons.clear, color: Colors.grey),
+                    onPressed: () {
+                      _searchController.clear();
+                      _filterContes(""); // Réinitialise la liste
+                    },
+                  )
+                      : Icon(Icons.search, color: Colors.grey),
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(8.0)),
+                ),
+                onChanged: _filterContes,
+              ),
+            ),
+            Expanded(child:  searchContes.isEmpty
+                ? Center(child: Text("Aucun conte trouvé"))
+                : ListView.builder(
+              itemCount: searchContes.length,
+              itemBuilder: (context, index) {
+                return Contescard(comte: searchContes[index]);
               },
-            )
-                : Icon(Icons.search, color: Colors.grey),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(8.0)),
-          ),
-          onChanged: _filterContes,
+            ),)
+          ],
         ),
-      ),
-      body: searchContes.isEmpty
-          ? Center(child: Text("Aucun conte trouvé"))
-          : ListView.builder(
-        itemCount: searchContes.length,
-        itemBuilder: (context, index) {
-          return Contescard(comte: searchContes[index]);
-        },
-      ),
-    );
+      );
   }
 }

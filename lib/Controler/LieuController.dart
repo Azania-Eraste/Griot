@@ -4,145 +4,173 @@ import '../Models/Lieu.dart';
 class LieuController {
   static List<Lieu> lieux = [
     Lieu(
-      nom: "Ségou",
-      description: "Lieu légendaire, berceau de la culture mandingue.",
+      nom: "Timbuktu",
+      description: "Cité historique et centre de la culture islamique en Afrique de l'Ouest.",
       imageUrl: "assets/images/Visily.jpg",
       contes: [
         Conte(
-            titre: "L'Histoire de la Gazelle et du Lion",
-            sousTitre: "Le courage face à la peur",
-            resume: "Une jeune gazelle montre qu'il faut parfois faire preuve de courage même face au plus grand des prédateurs.",
-            histoire: "Dans un village de Ségou, une gazelle effrayée se retrouvait face à un lion. Mais plutôt que de fuir, elle se battit courageusement, prouvant que le courage peut triompher des peurs les plus profondes.",
-            imageUrl: "assets/images/Visily.jpg"
+          titre: "Le Voyage du Savoir",
+          sousTitre: "Le périple d'un érudit",
+          resume: "Un jeune érudit voyage pour étudier et répandre le savoir.",
+          histoire: "Dans la ville de Tombouctou, un jeune érudit décida de voyager à travers le désert pour chercher des connaissances. Il rencontra de nombreux sages et apprit des philosophies anciennes. À son retour, il fonda une école où il enseigna le savoir qu'il avait acquis. Ce conte rappelle l'importance de l'apprentissage et de la transmission du savoir.",
+          imageUrl: "assets/images/Visily.jpg",
         ),
         Conte(
-            titre: "Le Conte du Baobab Sacré",
-            sousTitre: "Les secrets cachés sous ses racines",
-            resume: "Un jeune garçon découvre le pouvoir mystique d'un baobab sacré.",
-            histoire: "Un enfant du village entend des histoires sur un baobab sacré dont les racines cacheraient des secrets ancestraux. Un jour, il découvre un trésor caché sous ses racines et fait face à des choix difficiles qui changeront son avenir.",
-            imageUrl: "assets/images/Visily.jpg"
+          titre: "La Cité Engloutie",
+          sousTitre: "Les mystères sous l'eau",
+          resume: "Une cité perdue émerge des eaux pour révéler ses secrets.",
+          histoire: "Il y a des siècles, une grande cité de Tombouctou disparut sous les eaux à cause d'un cataclysme. Des rumeurs parlaient de trésors et de secrets cachés. Un jeune pêcheur, curieux, plongea dans les profondeurs du fleuve et découvrit les ruines de la ville. Il en ressortit avec des artefacts anciens qui changèrent sa vie à jamais.",
+          imageUrl: "assets/images/Visily.jpg",
         ),
         Conte(
-            titre: "La Fable de la Tortue et du Vautour",
-            sousTitre: "L'intelligence contre la force",
-            resume: "La tortue utilise sa ruse pour échapper à un vautour affamé.",
-            histoire: "Un vautour menaçait de dévorer une tortue, mais la tortue, sage et rusée, réussit à tromper l'oiseau pour sauver sa vie. Ce conte enseigne que la ruse est parfois plus puissante que la force brute.",
-            imageUrl: "assets/images/Visily.jpg"
+          titre: "La Légende du Dromadaire",
+          sousTitre: "L'animal fidèle",
+          resume: "L'histoire d'un dromadaire qui sauve son maître dans le désert.",
+          histoire: "Dans le désert malien, un marchand se perdit avec son dromadaire. Au bord de la mort, le dromadaire guida son maître vers une oasis cachée. La légende raconte que l'animal était guidé par une sagesse mystique, et que sa fidélité fut récompensée par la prospérité du marchand.",
+          imageUrl: "assets/images/Visily.jpg",
         ),
       ],
     ),
     Lieu(
-      nom: "Lagos",
-      description: "Le coeur battant du Nigéria, entre tradition et modernité.",
+      nom: "Bamako",
+      description: "Capitale dynamique du Mali, entre modernité et traditions.",
       imageUrl: "assets/images/Visily.jpg",
       contes: [
         Conte(
-            titre: "La Caverne des Ancêtres",
-            sousTitre: "Le retour aux racines",
-            resume: "Un jeune homme part à la recherche de ses ancêtres dans une ancienne caverne.",
-            histoire: "Un jeune homme, fatigué de la vie moderne, part à la recherche de la caverne ancestrale de sa famille. Dans la caverne, il rencontre l'esprit de ses ancêtres qui lui enseignent la valeur de l'équilibre entre la tradition et le progrès.",
-            imageUrl: "assets/images/Visily.jpg"
+          titre: "Le Serpent et l'Humanité",
+          sousTitre: "Une quête de réconciliation",
+          resume: "Un serpent cherche à comprendre la nature humaine.",
+          histoire: "Un serpent magique vivait près de Bamako et observait les humains. Curieux de comprendre pourquoi ils se querellaient sans cesse, il se métamorphosa en homme. Il parcourut le monde, cherchant des réponses. Finalement, il comprit que l’amour et la tolérance étaient les clés de l'harmonie, et retourna sous sa forme de serpent pour enseigner cette sagesse.",
+          imageUrl: "assets/images/Visily.jpg",
         ),
         Conte(
-            titre: "La Création de l'Homme et de la Femme",
-            sousTitre: "Une légende Yoruba",
-            resume: "L'origine de l'humanité selon les croyances Yoruba.",
-            histoire: "Selon les légendes Yoruba, Olodumare créa l'homme et la femme à partir de l'argile, insufflant à l'homme la vie. Mais c'était à travers l'amour et l'harmonie qu'ils devaient prospérer sur terre.",
-            imageUrl: "assets/images/Visily.jpg"
+          titre: "La Nuit des Etoiles",
+          sousTitre: "L'étoile filante",
+          resume: "Une légende explique pourquoi les étoiles filantes existent.",
+          histoire: "Une nuit, une étoile filante traversa le ciel de Bamako. Les anciens disaient qu'une âme pure montait vers les cieux pour guider les âmes perdues. Depuis lors, chaque étoile filante est perçue comme un présage de chance et de bonheur.",
+          imageUrl: "assets/images/Visily.jpg",
         ),
         Conte(
-            titre: "La Prophétie du Serpent",
-            sousTitre: "La sagesse d'un serpent mystique",
-            resume: "Un jeune prince doit résoudre l'énigme d'un serpent mystique.",
-            histoire: "Dans un royaume Yoruba, un serpent mystique apparaissait chaque nuit pour poser une énigme. Le prince, en quête de sagesse, résout l'énigme et apprend que l'intuition et la sagesse intérieure sont les véritables clés du pouvoir.",
-            imageUrl: "assets/images/Visily.jpg"
+          titre: "La Légende du Fleuve Niger",
+          sousTitre: "La naissance du fleuve sacré",
+          resume: "Le fleuve Niger raconte son origine mythologique.",
+          histoire: "Selon les légendes de Bamako, le fleuve Niger n'était pas un simple cours d'eau, mais une entité vivante. Il fut formé par un dieu qui versa son énergie divine dans la terre. Depuis ce jour, il est considéré comme un fleuve sacré, porte de vie pour les peuples qui y vivent.",
+          imageUrl: "assets/images/Visily.jpg",
         ),
       ],
     ),
     Lieu(
-      nom: "Alger",
-      description: "L'immensité du désert, terre de légendes et de mystères.",
+      nom: "Abidjan",
+      description: "Ville moderne sur la côte ivoirienne, avec une histoire riche et variée.",
       imageUrl: "assets/images/Visily.jpg",
       contes: [
         Conte(
-            titre: "La Fille du Désert",
-            sousTitre: "La quête de la liberté",
-            resume: "Une jeune fille du désert se libère de ses chaînes grâce à sa volonté.",
-            histoire: "Dans un petit village isolé du Sahara, une jeune fille s'échappe de la captivité imposée par un chef tyrannique grâce à sa ruse et à son courage. Elle trouve la liberté dans l'immensité du désert.",
-            imageUrl: "assets/images/Visily.jpg"
+          titre: "La Naissance de la Lagune",
+          sousTitre: "Un amour entre ciel et mer",
+          resume: "Une légende raconte la naissance de la lagune d'Abidjan.",
+          histoire: "Il y a des siècles, un dieu du ciel tomba amoureux d'une déesse de la mer. Leur union donna naissance à la lagune d'Abidjan, une rencontre parfaite entre les eaux douces et salées. Aujourd'hui, la lagune est considérée comme un symbole d'équilibre et de prospérité.",
+          imageUrl: "assets/images/Visily.jpg",
         ),
         Conte(
-            titre: "Le Mirage de l'Âme",
-            sousTitre: "Le piège du désert",
-            resume: "Un homme cherche un mirage, croyant y trouver la richesse.",
-            histoire: "Un homme perdu dans le désert poursuit un mirage, pensant qu'il contient un trésor caché. Après des jours de marche, il réalise que le véritable trésor réside dans la sagesse et la patience.",
-            imageUrl: "assets/images/Visily.jpg"
+          titre: "L'Héritage de la Danse",
+          sousTitre: "La danse sacrée des Baoulés",
+          resume: "Un jeune danseur découvre l'origine sacrée de la danse Baoulé.",
+          histoire: "Un jeune garçon Baoulé, de la région d'Abidjan, découvrit qu'une danse rituelle de son peuple avait des pouvoirs mystiques. En dansant, il pouvait communiquer avec les ancêtres et recevoir des visions du futur. La danse devint une tradition sacrée.",
+          imageUrl: "assets/images/Visily.jpg",
         ),
         Conte(
-            titre: "Le Serpent du Sahara",
-            sousTitre: "Un serpent qui protège les secrets du désert",
-            resume: "Un serpent sacré garde les mystères cachés sous le sable.",
-            histoire: "Un serpent géant garde un trésor caché dans le désert. Seuls ceux qui peuvent résoudre les énigmes du désert peuvent découvrir le secret du serpent.",
-            imageUrl: "assets/images/Visily.jpg"
+          titre: "Le Secret du Baobab d'Abidjan",
+          sousTitre: "Un arbre aux pouvoirs surnaturels",
+          resume: "Un baobab à Abidjan renferme un secret ancien.",
+          histoire: "Dans le centre d'Abidjan, un immense baobab cachait un secret vieux de plusieurs siècles. Ceux qui osaient s'aventurer sous ses racines pouvaient entendre des voix venant d'autres époques. Un jeune homme découvrit ce secret et devint un gardien des savoirs anciens.",
+          imageUrl: "assets/images/Visily.jpg",
         ),
       ],
     ),
     Lieu(
-      nom: "Le Caire",
-      description: "L'origine des civilisations, aux rives mystérieuses.",
+      nom: "Ouagadougou",
+      description: "Capitale du Burkina Faso, riche en culture et traditions.",
       imageUrl: "assets/images/Visily.jpg",
       contes: [
         Conte(
-            titre: "La Légende de Cléopâtre et d'Osiris",
-            sousTitre: "Une histoire d'amour et de pouvoir",
-            resume: "Cléopâtre doit choisir entre l'amour et la politique.",
-            histoire: "Cléopâtre, reine d'Égypte, doit choisir entre son amour pour César et le pouvoir qu'elle pourrait avoir avec Pompée. Ce conte explore le thème du pouvoir et des sacrifices dans les choix difficiles.",
-            imageUrl: "assets/images/Visily.jpg"
+          titre: "La Quête de l'Obélisque",
+          sousTitre: "Une aventure initiatique",
+          resume: "Un jeune garçon part à la recherche d'un obélisque mystérieux.",
+          histoire: "Dans les montagnes autour de Ouagadougou, un jeune garçon s'aventura à la recherche d'un obélisque légendaire censé renfermer des pouvoirs mystiques. Son voyage l'initia aux secrets des anciens et aux épreuves de la vie.",
+          imageUrl: "assets/images/Visily.jpg",
         ),
         Conte(
-            titre: "Le Voyage de Rê",
-            sousTitre: "Le dieu du soleil et sa quête",
-            resume: "Rê, le dieu du soleil, voyage à travers l'Égypte pour apporter la lumière.",
-            histoire: "Rê, dans sa barque solaire, traverse chaque jour le ciel d'Égypte. Mais, chaque nuit, il doit faire face à des créatures mystérieuses dans le monde souterrain avant de renaître le matin.",
-            imageUrl: "assets/images/Visily.jpg"
+          titre: "Les Trois Sœurs et le Serpent",
+          sousTitre: "La sagesse des ancêtres",
+          resume: "Trois sœurs doivent affronter un serpent mythique pour sauver leur village.",
+          histoire: "Trois sœurs courageuses de Ouagadougou se lancèrent dans une quête pour sauver leur village d'un serpent monstrueux. Chaque sœur apporta une qualité unique : l'intelligence, la bravoure et la sagesse. Ensemble, elles réussirent à déjouer les pièges du serpent.",
+          imageUrl: "assets/images/Visily.jpg",
         ),
         Conte(
-            titre: "Le Trésor de Toutankhamon",
-            sousTitre: "Les mystères de la tombe du pharaon",
-            resume: "Un jeune prêtre découvre un secret caché dans la tombe du pharaon.",
-            histoire: "Un jeune prêtre, tout juste initié aux mystères de la mort, découvre un coffre caché dans la tombe de Toutankhamon. Mais la découverte du trésor l'amène à une décision cruciale qui pourrait bouleverser l'histoire.",
-            imageUrl: "assets/images/Visily.jpg"
+          titre: "La Cité des Étoiles",
+          sousTitre: "Le destin écrit dans le ciel",
+          resume: "Les étoiles montrent le chemin à un jeune garçon.",
+          histoire: "Dans Ouagadougou, un jeune garçon s'endormit un soir sous les étoiles et eut une vision. Il vit un chemin lumineux dans le ciel, qu'il suivit le lendemain pour trouver la sagesse et devenir un grand guérisseur.",
+          imageUrl: "assets/images/Visily.jpg",
         ),
       ],
     ),
     Lieu(
-      nom: "Kinshasa",
-      description: "Le poumon culturel de l'Afrique centrale.",
+      nom: "Kigali",
+      description: "Capitale du Rwanda, entre modernité et histoire tragique.",
       imageUrl: "assets/images/Visily.jpg",
       contes: [
         Conte(
-            titre: "La Déesse de la Rivière",
-            sousTitre: "Le secret de la rivière Lualaba",
-            resume: "Une déesse aide un pêcheur à sauver son village de la sécheresse.",
-            histoire: "Un jeune pêcheur, en quête d'eau pour son village, rencontre une déesse cachée sous les eaux de la rivière Lualaba. Elle lui offre un pouvoir mystique pour sauver la communauté, mais à un prix.",
-            imageUrl: "assets/images/Visily.jpg"
+          titre: "La Montagne des Ancêtres",
+          sousTitre: "Le voyage spirituel",
+          resume: "Un homme gravit une montagne pour honorer les ancêtres.",
+          histoire: "Un homme de Kigali entreprit de gravir une montagne sacrée, réputée pour être la demeure des ancêtres. Après un long voyage, il reçut des visions qui lui révélèrent la vérité sur ses racines et sa place dans le monde.",
+          imageUrl: "assets/images/Visily.jpg",
         ),
         Conte(
-            titre: "L'Oiseau de la Liberté",
-            sousTitre: "Le courage d'un oiseau contre un chasseur",
-            resume: "Un oiseau magique aide un jeune homme à échapper à un chasseur.",
-            histoire: "Dans les forêts denses autour de Kinshasa, un jeune homme est capturé par un chasseur. Un oiseau mystique, sentant sa souffrance, lui offre la liberté en échange de sa promesse de protéger la nature.",
-            imageUrl: "assets/images/Visily.jpg"
+          titre: "Le Cœur de la Forêt",
+          sousTitre: "La quête du cœur perdu",
+          resume: "Un jeune prince part à la recherche d'un trésor caché dans la forêt.",
+          histoire: "Un prince de Kigali, en quête de la sagesse, partit explorer la forêt sacrée à la recherche du cœur perdu. Il apprit que la véritable richesse réside dans la connaissance de soi et l'amour des autres.",
+          imageUrl: "assets/images/Visily.jpg",
         ),
         Conte(
-            titre: "Le Masque Sacré",
-            sousTitre: "L'histoire d'un masque de pouvoir",
-            resume: "Un ancien masque donne un pouvoir aux descendants du grand roi.",
-            histoire: "Le masque ancestral de Kinshasa, dont la légende raconte qu'il confère le pouvoir de voir l'avenir, tombe entre les mains d'un jeune homme. Ce dernier doit apprendre à maîtriser ce pouvoir ou risquer de détruire son royaume.",
-            imageUrl: "assets/images/Visily.jpg"
+          titre: "Le Ruisseau des Rêves",
+          sousTitre: "Les rêves révélateurs",
+          resume: "Les rêves d'un jeune garçon le mènent vers une grande révélation.",
+          histoire: "Dans les montagnes de Kigali, un jeune garçon avait des rêves étranges chaque nuit. Un jour, il suivit les indices de ses rêves et découvrit une vallée secrète où il rencontra un sage qui lui révéla son destin.",
+          imageUrl: "assets/images/Visily.jpg",
         ),
       ],
     ),
-    // Ajouter d'autres lieux similaires avec des contes
+    Lieu(
+      nom: "Mombasa",
+      description: "Ville côtière du Kenya, au carrefour de cultures et traditions.",
+      imageUrl: "assets/images/Visily.jpg",
+      contes: [
+        Conte(
+          titre: "Les Gardiens du Corail",
+          sousTitre: "Les secrets sous l'océan",
+          resume: "Un jeune pêcheur découvre les mystères des fonds marins.",
+          histoire: "Un jeune pêcheur de Mombasa découvrit un jour un monde sous-marin peuplé de créatures mythologiques. Avec l'aide d'un ancien gardien du corail, il apprit à comprendre les mystères de l'océan.",
+          imageUrl: "assets/images/Visily.jpg",
+        ),
+        Conte(
+          titre: "La Reine de la Mer",
+          sousTitre: "La légende d'une sirène",
+          resume: "Une légende raconte l'histoire d'une sirène qui protège les mers.",
+          histoire: "Les habitants de Mombasa racontent l’histoire d’une sirène, qui protégeait les pêcheurs et leurs navires des tempêtes. Mais, un jour, un navire ne respecta pas les règles et la sirène se vengea en envoyant une tempête.",
+          imageUrl: "assets/images/Visily.jpg",
+        ),
+        Conte(
+          titre: "Le Voyage du Sable",
+          sousTitre: "Légende du désert",
+          resume: "Un voyage épique à travers le désert pour découvrir une ancienne cité.",
+          histoire: "Un jeune homme de Mombasa partit en quête à travers le désert pour retrouver une cité légendaire. Il dut traverser des dangers pour découvrir les secrets cachés sous le sable.",
+          imageUrl: "assets/images/Visily.jpg",
+        ),
+      ],
+    ),
+
   ];
 }

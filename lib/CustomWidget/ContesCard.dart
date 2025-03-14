@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:griot/Screen/ConteScreen.dart';
 
-import 'Models/Conte.dart';
+import '../Models/Conte.dart';
 
 class Contescard extends StatelessWidget {
 

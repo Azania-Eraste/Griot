@@ -4,9 +4,8 @@ import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:griot/Controler/LieuController.dart';
 import 'package:griot/Style/ColorAsset.dart';
-import 'package:griot/Models/Conte.dart';
 import 'package:griot/Models/Lieu.dart';
-import 'package:griot/ContesCard.dart';
+import 'package:griot/CustomWidget/ContesCard.dart';
 
 class Mapscreen extends StatefulWidget {
   const Mapscreen({super.key});
@@ -16,7 +15,9 @@ class Mapscreen extends StatefulWidget {
 }
 
 class _MapscreenState extends State<Mapscreen> {
+  final FocusNode focusNode = FocusNode();
   String _searchQuery = "";
+  final TextEditingController _searchController = TextEditingController();
   LatLng _mapCenter = LatLng(48.8566, 2.3522); // Position par défaut
   LatLng? _currentLocation;
   LatLng? _destination;
@@ -55,7 +56,7 @@ class _MapscreenState extends State<Mapscreen> {
       if (locations.isNotEmpty) {
         LatLng foundLocation =
         LatLng(locations[0].latitude, locations[0].longitude);
-
+        FocusScope.of(context).requestFocus(FocusNode());
         // Vérifier si le lieu est dans notre liste
         Lieu? lieuTrouve = LieuController.lieux.firstWhere(
                 (lieu) =>
@@ -88,8 +89,7 @@ class _MapscreenState extends State<Mapscreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
+    return Stack(
         children: [
           // Carte Google Maps
           GoogleMap(
@@ -141,7 +141,7 @@ class _MapscreenState extends State<Mapscreen> {
                     decoration: InputDecoration(
                       hintText: "D'où voulez-vous apprendre aujourd'hui ?",
                       filled: true,
-                      fillColor: Colors.white,
+                      fillColor: ColorAsset.white,
                       contentPadding:
                       EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                       suffixIcon: _isSearching
@@ -162,7 +162,7 @@ class _MapscreenState extends State<Mapscreen> {
 
           // Bouton pour retrouver sa position
           Positioned(
-            bottom: 90,
+            bottom: 50,
             left: 20,
             child: FloatingActionButton(
               onPressed: _getCurrentLocation,
@@ -212,7 +212,6 @@ class _MapscreenState extends State<Mapscreen> {
               ),
             ),
         ],
-      ),
-    );
+      );
   }
 }

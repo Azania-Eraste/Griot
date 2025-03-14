@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:griot/Controler/ConteController.dart';
 import 'package:griot/Screen/DetailScreen.dart';
 import 'package:griot/Style/ColorAsset.dart';
 import 'package:griot/Style/textStyling.dart';
-import 'Models/Lieu.dart';
+import '../Models/Lieu.dart';
 
 class FeedCard extends StatelessWidget {
   final Lieu lieu;
