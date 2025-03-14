@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'profilsettings.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -7,32 +8,25 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   bool _isNightMode = false;
+  String _firstName = 'Elizabeth';
+  String _lastName = 'Taylor';
+  String _phoneNumber = '123-456-7890';
+  DateTime? _birthday;
+
+  void _updateProfile(String firstName, String lastName, String phoneNumber,
+      DateTime birthday) {
+    setState(() {
+      _firstName = firstName;
+      _lastName = lastName;
+      _phoneNumber = phoneNumber;
+      _birthday = birthday;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: _isNightMode ? Colors.black : Colors.grey[200],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 3,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.explore, color: Colors.grey),
-            label: 'Explore',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search, color: Colors.grey),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.map, color: Colors.grey),
-            label: 'Map',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person, color: Colors.brown),
-            label: 'Compte',
-          ),
-        ],
-      ),
       body: Column(
         children: [
           Container(
@@ -47,7 +41,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     backgroundColor: Colors.grey,
                   ),
                   SizedBox(height: 10),
-                  Text('Elizabeth Taylor',
+                  Text('$_firstName $_lastName',
                       style: TextStyle(
                           color: _isNightMode ? Colors.white : Colors.black,
                           fontSize: 18)),
@@ -60,7 +54,15 @@ class _ProfilePageState extends State<ProfilePage> {
               padding: EdgeInsets.all(16),
               children: [
                 _buildSectionTitle('ACCOUNT'),
-                _buildListTile(Icons.person, 'Personal information'),
+                _buildListTile(Icons.person, 'Personal information', onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          ProfileSettingsPage(onSave: _updateProfile),
+                    ),
+                  );
+                }),
                 Divider(color: _isNightMode ? Colors.white : Colors.grey),
                 _buildSectionTitle('APPEARANCE'),
                 _buildSwitchTile('Night mode', _isNightMode),
@@ -92,7 +94,7 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 
   Widget _buildListTile(IconData icon, String title,
-      {String? subtitle, IconData? trailingIcon}) {
+      {String? subtitle, IconData? trailingIcon, VoidCallback? onTap}) {
     return ListTile(
       leading: Icon(icon, color: _isNightMode ? Colors.white : Colors.black54),
       title: Text(title,
@@ -106,7 +108,7 @@ class _ProfilePageState extends State<ProfilePage> {
           ? Icon(trailingIcon, color: Colors.amber)
           : Icon(Icons.arrow_forward_ios,
               size: 16, color: _isNightMode ? Colors.white : Colors.black54),
-      onTap: () {},
+      onTap: onTap,
     );
   }
 
