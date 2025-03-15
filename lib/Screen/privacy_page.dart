@@ -27,6 +27,7 @@ class PrivacyPage extends StatelessWidget {
               'This is the privacy policy of the application. Here you can describe how user data is handled and protected.',
               style: TextStyle(fontSize: 16),
             ),
+            Spacer(),
           ],
         ),
       ),
