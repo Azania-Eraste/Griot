@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'profilsettings.dart';
 import 'privacy_page.dart';
 import 'help_support_page.dart';
+import 'confidentiality_page.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -23,6 +24,11 @@ class _ProfilePageState extends State<ProfilePage> {
       _phoneNumber = phoneNumber;
       _birthday = birthday;
     });
+  }
+
+  void _updateConfidentiality(String email, String password) {
+    // Handle the updated email and password
+    print('Email: $email, Password: $password');
   }
 
   @override
@@ -72,7 +78,15 @@ class _ProfilePageState extends State<ProfilePage> {
                     subtitle: 'Medium'),
                 Divider(color: _isNightMode ? Colors.white : Colors.grey),
                 _buildSectionTitle('OTHER SETTINGS'),
-                _buildListTile(Icons.security, 'Security'),
+                _buildListTile(Icons.security, 'Security', onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          ConfidentialityPage(onSave: _updateConfidentiality),
+                    ),
+                  );
+                }),
                 _buildListTile(Icons.privacy_tip, 'Privacy',
                     trailingIcon: Icons.warning_amber_rounded, onTap: () {
                   Navigator.push(

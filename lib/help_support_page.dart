@@ -24,7 +24,7 @@ class HelpSupportPage extends StatelessWidget {
             ),
             SizedBox(height: 16),
             Text(
-              'If you need any help or support, please contact us at support@example.com.',
+              'If you need any help or support, please contact us at support@GRIOT.com.',
               style: TextStyle(fontSize: 16),
             ),
           ],
