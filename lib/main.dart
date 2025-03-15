@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:griot/Screen/BaseScreen.dart';
+import 'package:griot/Screen/login_page.dart';
 import 'package:griot/Screen/splash_screen.dart';
 import 'Screen/FeedScreen.dart';
+import 'Screen/signup_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,6 +26,8 @@ class _MyAppState extends State<MyApp> {
       routes: {
         '/home': (context) => FeedScreen(lieux: []),
         '/base': (context) => Basescreen(),
+        '/login': (context) => LoginPage(),
+        '/signup': (context) => SignupPage(),
       },
       title: 'Griot App',
       theme: ThemeData(

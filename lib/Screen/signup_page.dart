@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatefulWidget {
-  final Function(String, String, String) onSignup;
 
-  SignupPage({required this.onSignup});
 
   @override
   _SignupPageState createState() => _SignupPageState();
@@ -59,7 +57,7 @@ class _SignupPageState extends State<SignupPage> {
                         },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please enter your first name';
+                            return 'S\'il vous plait entrez votre nom';
                           }
                           return null;
                         },
@@ -76,7 +74,7 @@ class _SignupPageState extends State<SignupPage> {
                         },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please enter your last name';
+                            return 'S\'il vous plait entrez votre prenom';
                           }
                           return null;
                         },
@@ -94,7 +92,7 @@ class _SignupPageState extends State<SignupPage> {
                         },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please enter your password';
+                            return 'S\'il vous plait entrez votre mot de passe';
                           }
                           return null;
                         },
@@ -107,7 +105,6 @@ class _SignupPageState extends State<SignupPage> {
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState!.save();
-                      widget.onSignup(_firstName, _lastName, _password);
                       Navigator.pop(context);
                     }
                   },

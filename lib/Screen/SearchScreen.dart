@@ -40,7 +40,7 @@ class _SearchScreenState extends State<SearchScreen> {
             .toList();
       }
     });
-    FocusScope.of(context).unfocus(); // Ferme le clavier après la recherche
+    // Ferme le clavier après la recherche
   }
 
   @override

@@ -176,19 +176,19 @@ class LieuController {
 
 
 
-  static List<Conte> getContesByLieu([String lieuNom = ""]) {
-    if (lieuNom.trim().isEmpty) {
-      // Retourne tous les contes de tous les lieux
+  static List<Conte> getContesByLieu([String searchQuery = ""]) {
+    if (searchQuery.trim().isEmpty) {
+      // Retourne tous les contes si aucun filtre n'est appliqué
       return lieux.expand((lieu) => lieu.contes).toList();
     }
 
-    Lieu? lieu = lieux.firstWhere(
-          (lieu) => lieu.nom.trim().toLowerCase() == lieuNom.trim().toLowerCase(),
-      orElse: () => Lieu(nom: "", description: "", imageUrl: "", contes: []),
-    );
-
-    return lieu.nom.isNotEmpty ? lieu.contes : [];
+    // Recherche dans les lieux ET dans les titres des contes
+    return lieux.expand((lieu) => lieu.contes).where((conte) {
+      return conte.titre.toLowerCase().contains(searchQuery.toLowerCase()) ||
+          conte.sousTitre.toLowerCase().contains(searchQuery.toLowerCase());
+    }).toList();
   }
+
 
 
 }

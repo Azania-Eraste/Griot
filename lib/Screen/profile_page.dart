@@ -33,83 +33,77 @@ class _ProfilePageState extends State<ProfilePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: _isNightMode ? Colors.black : Colors.grey[200],
-      body: Column(
-        children: [
-          Container(
-            color: Colors.brown,
-            height: 150,
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+    return SafeArea(
+      child: Column(
+          children: [
+            Container(
+              color: Colors.brown,
+              height: 150,
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      radius: 40,
+                      backgroundColor: Colors.grey,
+                    ),
+                    SizedBox(height: 10),
+                    Text('$_firstName $_lastName',
+                        style: TextStyle(
+                            color: _isNightMode ? Colors.white : Colors.black,
+                            fontSize: 18)),
+                  ],
+                ),
+              ),
+            ),
+            Expanded(
+              child: ListView(
+                padding: EdgeInsets.all(16),
                 children: [
-                  CircleAvatar(
-                    radius: 40,
-                    backgroundColor: Colors.grey,
-                  ),
-                  SizedBox(height: 10),
-                  Text('$_firstName $_lastName',
-                      style: TextStyle(
-                          color: _isNightMode ? Colors.white : Colors.black,
-                          fontSize: 18)),
+                  _buildSectionTitle('Compte'),
+                  _buildListTile(Icons.person, 'Personal information', onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            ProfileSettingsPage(onSave: _updateProfile),
+                      ),
+                    );
+                  }),
+                  Divider(color: _isNightMode ? Colors.white : Colors.grey),
+                  _buildSectionTitle('OTHER SETTINGS'),
+                  _buildListTile(Icons.security, 'Security', onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            ConfidentialityPage(onSave: _updateConfidentiality),
+                      ),
+                    );
+                  }),
+                  _buildListTile(Icons.privacy_tip, 'Privacy',
+                      trailingIcon: Icons.warning_amber_rounded, onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PrivacyPage(),
+                      ),
+                    );
+                  }),
+                  _buildListTile(Icons.notifications, 'Notification'),
+                  _buildListTile(Icons.help_outline, 'Help & Support', onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HelpSupportPage(),
+                      ),
+                    );
+                  }),
                 ],
               ),
             ),
-          ),
-          Expanded(
-            child: ListView(
-              padding: EdgeInsets.all(16),
-              children: [
-                _buildSectionTitle('ACCOUNT'),
-                _buildListTile(Icons.person, 'Personal information', onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          ProfileSettingsPage(onSave: _updateProfile),
-                    ),
-                  );
-                }),
-                Divider(color: _isNightMode ? Colors.white : Colors.grey),
-                _buildSectionTitle('APPEARANCE'),
-                _buildSwitchTile('Night mode', _isNightMode),
-                _buildListTile(Icons.text_fields, 'Text size',
-                    subtitle: 'Medium'),
-                Divider(color: _isNightMode ? Colors.white : Colors.grey),
-                _buildSectionTitle('OTHER SETTINGS'),
-                _buildListTile(Icons.security, 'Security', onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          ConfidentialityPage(onSave: _updateConfidentiality),
-                    ),
-                  );
-                }),
-                _buildListTile(Icons.privacy_tip, 'Privacy',
-                    trailingIcon: Icons.warning_amber_rounded, onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => PrivacyPage(),
-                    ),
-                  );
-                }),
-                _buildListTile(Icons.notifications, 'Notification'),
-                _buildListTile(Icons.help_outline, 'Help & Support', onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => HelpSupportPage(),
-                    ),
-                  );
-                }),
-              ],
-            ),
-          ),
-        ],
-      ),
+          ],
+        ),
     );
   }
 

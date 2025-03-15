@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
-  final Function(String, String) onLogin;
 
-  LoginPage({required this.onLogin});
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -105,8 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState!.save();
-                      widget.onLogin(_email, _password);
-                      Navigator.pop(context);
+                      Navigator.pushNamed(context, "/base");
                     }
                   },
                   child: Text(

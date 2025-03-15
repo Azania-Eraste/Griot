@@ -28,7 +28,7 @@ class _BasescreenState extends State<Basescreen> {
           FeedScreen(lieux: LieuController.lieux),  // L'écran pour le feed
           SearchScreen(),
           Mapscreen(),            // L'écran pour la carte
-          //ProfilePage()
+          ProfilePage()
         ]
     );
 
@@ -65,13 +65,13 @@ class _BasescreenState extends State<Basescreen> {
                 icon: Icon(Icons.map, color: ColorAsset.grey,),
                 label: 'Map',
                 activeIcon: Icon(Icons.map, color: ColorAsset.primary,)
-            ),],
-           /* BottomNavigationBarItem(
+            ),
+          BottomNavigationBarItem(
                 icon: Icon(Icons.account_circle_sharp, color: ColorAsset.grey,),
                 label: 'Compte',
                 activeIcon: Icon(Icons.account_circle_sharp, color: ColorAsset.primary,)
             ),
-          ],*/
+          ],
           selectedItemColor: ColorAsset.primary,
         ),
       ),

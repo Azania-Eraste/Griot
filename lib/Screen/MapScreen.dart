@@ -59,12 +59,13 @@ class _MapscreenState extends State<Mapscreen> {
   void _searchLocation() async {
     if (_searchQuery.isEmpty) return;
     setState(() => _isSearching = true);
-
+    FocusScope.of(context).requestFocus(FocusNode());
     try {
       List<Location> locations = await locationFromAddress(_searchQuery);
+
       if (locations.isNotEmpty) {
         LatLng foundLocation = LatLng(locations[0].latitude, locations[0].longitude);
-        FocusScope.of(context).requestFocus(FocusNode());
+
         _fetchContesForLieu(_searchQuery); // Récupérer les contes du lieu recherché
 
         setState(() {

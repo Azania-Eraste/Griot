@@ -76,7 +76,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   // Skip button
                   TextButton(
                     onPressed: () {
-                     Navigator.pushNamed(context, "/base");
+                      Navigator.pushNamed(context, "/login");
                     },
                     child: Text(
                       'Skip',
@@ -111,7 +111,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           curve: Curves.easeIn,
                         );
                       } else {
-                        Navigator.pushNamed(context, "/base");
+                        Navigator.pushNamed(context, "/login");
                       }
                     },
                     icon: Icon(
