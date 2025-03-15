@@ -173,4 +173,22 @@ class LieuController {
     ),
 
   ];
+
+
+
+  static List<Conte> getContesByLieu([String lieuNom = ""]) {
+    if (lieuNom.trim().isEmpty) {
+      // Retourne tous les contes de tous les lieux
+      return lieux.expand((lieu) => lieu.contes).toList();
+    }
+
+    Lieu? lieu = lieux.firstWhere(
+          (lieu) => lieu.nom.trim().toLowerCase() == lieuNom.trim().toLowerCase(),
+      orElse: () => Lieu(nom: "", description: "", imageUrl: "", contes: []),
+    );
+
+    return lieu.nom.isNotEmpty ? lieu.contes : [];
+  }
+
+
 }

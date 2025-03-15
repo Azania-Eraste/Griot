@@ -3,6 +3,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:griot/Controler/LieuController.dart';
+import 'package:griot/Models/Conte.dart';
 import 'package:griot/Style/ColorAsset.dart';
 import 'package:griot/Models/Lieu.dart';
 import 'package:griot/CustomWidget/ContesCard.dart';
@@ -46,6 +47,14 @@ class _MapscreenState extends State<Mapscreen> {
     }
   }
 
+  void _fetchContesForLieu(String lieuNom) {
+    List<Conte> contes = LieuController.getContesByLieu(lieuNom);
+    setState(() {
+      _selectedLieu = Lieu(nom: lieuNom, description: "", imageUrl: "", contes: contes);
+    });
+  }
+
+
   // Rechercher un lieu et vérifier s'il est dans notre liste
   void _searchLocation() async {
     if (_searchQuery.isEmpty) return;
@@ -54,18 +63,12 @@ class _MapscreenState extends State<Mapscreen> {
     try {
       List<Location> locations = await locationFromAddress(_searchQuery);
       if (locations.isNotEmpty) {
-        LatLng foundLocation =
-        LatLng(locations[0].latitude, locations[0].longitude);
+        LatLng foundLocation = LatLng(locations[0].latitude, locations[0].longitude);
         FocusScope.of(context).requestFocus(FocusNode());
-        // Vérifier si le lieu est dans notre liste
-        Lieu? lieuTrouve = LieuController.lieux.firstWhere(
-                (lieu) =>
-            lieu.nom.toLowerCase() == _searchQuery.toLowerCase(),
-            orElse: () => Lieu(nom: "", description: "", imageUrl: "", contes: []));
+        _fetchContesForLieu(_searchQuery); // Récupérer les contes du lieu recherché
 
         setState(() {
           _destination = foundLocation;
-          _selectedLieu = lieuTrouve.nom.isNotEmpty ? lieuTrouve : null;
         });
         _moveCameraToLocation(foundLocation);
       }
@@ -75,6 +78,7 @@ class _MapscreenState extends State<Mapscreen> {
       setState(() => _isSearching = false);
     }
   }
+
 
   // Déplacer la caméra
   void _moveCameraToLocation(LatLng location) {
@@ -172,7 +176,7 @@ class _MapscreenState extends State<Mapscreen> {
           ),
 
           // Affichage des contes liés au lieu sélectionné
-          if (_selectedLieu != null)
+          if (_selectedLieu != null && _selectedLieu!.contes.isNotEmpty)
             Positioned(
               top: 500,
               left: 0,

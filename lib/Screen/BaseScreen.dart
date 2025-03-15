@@ -4,6 +4,7 @@ import 'package:griot/Screen/FeedScreen.dart';
 import 'package:griot/Screen/MapScreen.dart';
 import 'package:griot/Screen/SearchScreen.dart';
 import '/Style/colorAsset.dart';
+import 'profile_page.dart';
 
 class Basescreen extends StatefulWidget {
   const Basescreen({super.key});
@@ -27,6 +28,7 @@ class _BasescreenState extends State<Basescreen> {
           FeedScreen(lieux: LieuController.lieux),  // L'écran pour le feed
           SearchScreen(),
           Mapscreen(),            // L'écran pour la carte
+          //ProfilePage()
         ]
     );
 
@@ -50,22 +52,26 @@ class _BasescreenState extends State<Basescreen> {
           onTap: _onItemTapped, // Mise à jour de l'index lors de la sélection
           items:  <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-                icon: Icon(Icons.home),
+                icon: Icon(Icons.home, color: ColorAsset.grey,),
                 label: 'Explorer',
                 activeIcon: Icon(Icons.home, color: ColorAsset.primary,)
             ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.search_rounded),
+                icon: Icon(Icons.search_rounded, color: ColorAsset.grey,),
                 label: 'Recherche',
-                activeIcon: Icon(Icons.home, color: ColorAsset.primary,)
+                activeIcon: Icon(Icons.search_rounded, color: ColorAsset.primary,)
             ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.map),
+                icon: Icon(Icons.map, color: ColorAsset.grey,),
                 label: 'Map',
                 activeIcon: Icon(Icons.map, color: ColorAsset.primary,)
+            ),],
+           /* BottomNavigationBarItem(
+                icon: Icon(Icons.account_circle_sharp, color: ColorAsset.grey,),
+                label: 'Compte',
+                activeIcon: Icon(Icons.account_circle_sharp, color: ColorAsset.primary,)
             ),
-
-          ],
+          ],*/
           selectedItemColor: ColorAsset.primary,
         ),
       ),
